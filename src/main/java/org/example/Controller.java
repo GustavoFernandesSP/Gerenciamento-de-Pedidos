@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Controller {
 
-    List<Pedido> pedidos = new ArrayList<Pedido>();
+    private final List<Pedido> pedidos = new ArrayList<Pedido>();
 
 
     public void adicionarPedido(Pedido pedido) {
@@ -18,13 +18,23 @@ public class Controller {
 
         for (Pedido pedido : pedidos){
 
-            System.out.println("Pedido " + "#" + pedido.getId());
-            System.out.println("Produto " + "#" + pedido.getProduto().getNome());
-            System.out.println("Preço unitário : R$ " + pedido.getProduto().getPreco());
-            System.out.println("Quantidade: " + pedido.getQuantidade());
-            System.out.println("Data do Pedido: " + pedido.getData());
-            System.out.println("Total: R$: " + pedido.calcularTotal());
-            System.out.println("-------------------------------------------------------------");
+            String mensagem = String.format(
+                    "Pedido #%d%n" +
+                            "Produto: %s%n" +
+                            "Preço Unitário: R$ %.2f%n" +
+                            "Quantidade: %d%n" +
+                            "Data do Pedido: %s%n" +
+                            "Total: R$ %.2f%n",
+                    pedido.getId(),
+                    pedido.getProduto().getNome(),
+                    pedido.getProduto().getPreco(),
+                    pedido.getQuantidade(),
+                    pedido.getData(),
+                    pedido.calcularTotal()
+            );
+
+            System.out.println(mensagem);
+
         }
 
 

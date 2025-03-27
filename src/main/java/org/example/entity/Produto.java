@@ -4,12 +4,12 @@ public class Produto {
 
     public Integer id;
     public String nome;
-    public Double Preco;
+    public Double preco;
 
     public Produto(Integer id, String nome, Double preco) {
         this.id = id;
         this.nome = nome;
-        Preco = preco;
+        this.preco = preco;
     }
 
     public Integer getId() {
@@ -29,11 +29,11 @@ public class Produto {
     }
 
     public Double getPreco() {
-        return Preco;
+        return preco;
     }
 
     public void setPreco(Double preco) {
-        Preco = preco;
+        this.preco = preco;
     }
 
 }

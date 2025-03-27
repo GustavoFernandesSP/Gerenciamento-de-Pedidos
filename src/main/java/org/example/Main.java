@@ -22,8 +22,6 @@ public class Main {
 
         LocalDateTime dataAtual = LocalDateTime.now();
 
-
-
         Pedido pedidos = new Pedido(1,produto,2,dataAtual );
         Pedido pedidos2 = new Pedido(2,produto1,1,dataAtual);
         Pedido pedidos3 = new Pedido(3,produto2,10,dataAtual);
